@@ -51,7 +51,7 @@ namespace OneName
                         xSin = Math.Sin(x);
                         xKub = Math.Pow(x, 3);
                         xKvadrat = Math.Pow(x, 2);
-                        resultFour = xSin + xKub + 1 / xKvadrat + 1;
+                        resultFour = xSin + xKub + 1 / (xKvadrat + 1);
 
                         if (x == 0)
                             Console.WriteLine("Значение данного выражения sin(x) + x^3 + 1/x^2 + 1, при x = " + (x) + ", стремится к бесконечности.");

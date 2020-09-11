@@ -8,6 +8,22 @@ namespace TwoName
         private int xAxis = 5, yAxis = 3, testMax = 10; private bool resultCalculation;
         public int xOne, yOne, xCout, yCout;
 
+        public void Menu()
+        {
+            Console.Write("Введите координаты точки по x: ");
+            xCout = int.Parse(Console.ReadLine());
+            Console.Write("Введите координаты точки по y: ");
+            yCout = int.Parse(Console.ReadLine());
+        }
+
+        public void CoutResult()
+        {
+            if (resultCalculation)
+                Console.WriteLine("Точка ПРИНАДЛЕЖИТ!\n");
+            else
+                Console.WriteLine("Точка НЕ ПРИНАДЛЕЖИТ");
+        }
+
         public void Answer()
         {
             Console.WriteLine("ЗАДАЧА 2");
@@ -40,22 +56,6 @@ namespace TwoName
                     break;
                 }
             }
-        }
-
-        public void Menu()
-        {
-            Console.Write("Введите координаты точки по x: ");
-            xCout = int.Parse(Console.ReadLine());
-            Console.Write("Введите координаты точки по y: ");
-            yCout = int.Parse(Console.ReadLine());
-        }
-
-        public void CoutResult()
-        {
-            if (resultCalculation)
-                Console.WriteLine("Точка ПРИНАДЛЕЖИТ!\n");
-            else
-                Console.WriteLine("Точка НЕ ПРИНАДЛЕЖИТ");
         }
     }
 }
