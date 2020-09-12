@@ -13,8 +13,7 @@ namespace MainName
             try
             {
                 One objectOne = new One();
-                objectOne.Menu();
-                objectOne.SolutionTaskOne(objectOne.n, objectOne.m);
+                objectOne.SolutionTaskOne();
                 Console.WriteLine();
 
                 Two objectTwo = new Two();
@@ -27,7 +26,7 @@ namespace MainName
             }
             catch(Exception)
             {
-                Console.WriteLine("НЕКОРЕКТНЫЙ ВВОД.");
+                Console.WriteLine("НЕПРЕДВИДЕННЫЕ ПРОБЛЕМЫ.");
             }
         }
     }

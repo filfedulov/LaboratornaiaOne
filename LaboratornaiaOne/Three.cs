@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Linq.Expressions;
 
 namespace ThreeName
 {
@@ -7,28 +7,61 @@ namespace ThreeName
     {
         private double b = 0.0001, aKvadrat, bKvadrat, abKvadrat, resultDouble;
         private float resultFloat;
-        private int a = 1000;
+        private int a = 1000, choiceIndex, iD, iF;
+        private const double DOUBLE_ANSWER = 1.00117176771164, FLOAT_ANSWER = -1250000;
+        private string forThreeTestd_, forThreeTestf_;
 
         public void Menu()
         {
-            Console.WriteLine("ЗАДАЧА 3");
-            while(true)
-            {
-                Console.WriteLine("Выберите индекс действие\n1.Вычислить значение выражения для double;\n2.Вычислить для float;\n3.Выход.");
-                int choiceIndex = int.Parse(Console.ReadLine());
-                if (choiceIndex == 1)
+            forThreeTestd_ = Convert.ToString(DOUBLE_ANSWER);
+            forThreeTestf_ = Convert.ToString(FLOAT_ANSWER);
+            Console.WriteLine("ЗАДАЧА 3(Протестируем данные значения, они должны соответствовать при double = 1,00117176771164, при преобразовании во float = -1250000.)");
+           
+                do
                 {
-                    Console.WriteLine(SolutionForDouble()+"\n");
-                    continue;
-                }
-                else if (choiceIndex == 2)
+                try
                 {
-                    Console.WriteLine(SolutionForFloat()+"\n");
-                    continue;
+                    Console.WriteLine("Выберите индекс действие\n1.Вычислить значение выражения для double;\n2.Вычислить для float;\n3.Выход.");
+                    choiceIndex = int.Parse(Console.ReadLine());
+                    switch (choiceIndex)
+                    {
+                        case 1:
+                            Console.WriteLine(SolutionForDouble() + "\n");
+                            if (iD == 0)
+                            {
+                                if (Convert.ToString(SolutionForDouble()) == forThreeTestd_)
+                                    Console.WriteLine("Double значение УДАЧНО прошло тест\n");
+                                else
+                                    Console.WriteLine("Double значение НЕУДАЧНО прошло тест\n");
+                            }
+                            iD++;
+                            break;
+                        case 2:
+                            Console.WriteLine(SolutionForFloat() + "\n");
+                            if (iF == 0)
+                            {
+                                if (Convert.ToString(SolutionForFloat()) == forThreeTestf_)
+                                    Console.WriteLine("Float значение УДАЧНО прошло тест\n");
+                                else
+                                    Console.WriteLine("Float значение НЕУДАЧНО прошло тест\n");
+                            }
+                            iF++;
+                            break;
+                        default:
+                            if (choiceIndex != 3)
+                                Console.WriteLine("Нет действия под данным индексом! Повторите ввод...\n");
+                            break;
+
+                    }
                 }
-                else
-                    break;
-            }
+                catch(FormatException fEX)
+                {
+                    Console.WriteLine(fEX.Message);
+                }
+                } while (choiceIndex != 3);
+            
+            
+           
         }
         public double SolutionForDouble()
         {
