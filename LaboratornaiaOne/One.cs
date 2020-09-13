@@ -5,7 +5,7 @@ namespace OneName
 {
     public class One
     {
-        public int n, m, n_, m_, i_ = 0;
+        public int n, m, n_, m_;
         private int resultOne, testMax = 10; 
         private bool resultFree, resultTwo; 
         private double x, x_, xSin, xKub, xKvadrat, resultFour;
@@ -25,7 +25,7 @@ namespace OneName
         }
         public void SolutionTaskOne()
         {
-            while(true) // на случай, если будет не корректный ввод, чтобы не выходить из программы
+            while(true) // на случай, если будет не корректный ввод, чтобы не выходить из программы(непонятно сколько раз будет произведен некорректный ввод)
             {
                 try
                 {
@@ -81,13 +81,13 @@ namespace OneName
                 
             for (int i = 0; i < amountTest; i++)
             {
-                if(i_==0)
+                if(i == 0) 
                 {
                     forFourTest = Convert.ToString(X);
-                    Console.WriteLine("Tecт № " + (i + 1) + " (данный тест будет определяющим к примеру при x = 1 значение выражения\n sin(x) + x^3 + 1/x^2 + 1 = 2,3414709848079.)");
+                    Console.WriteLine("\nTecт № " + (i + 1) + " (данный тест будет определяющим к примеру при x = 1 значение выражения\n sin(x) + x^3 + 1/x^2 + 1 = 2,3414709848079.)");
                 }
                 else
-                    Console.WriteLine("Tecт № " + (i + 1));
+                    Console.WriteLine("\nTecт № " + (i + 1));
 
                 Console.Write("Введите значение x: ");
                 try
@@ -99,7 +99,7 @@ namespace OneName
                     xKvadrat = Math.Pow(x, 2);
                     resultFour = xSin + xKub + 1 / (xKvadrat + 1);
                     Console.WriteLine("Значение данного выражения sin(x) + x^3 + 1/x^2 + 1, при x = " + (x) + ", = " + resultFour + ".");
-                    if(x_ == 1 && (i_ == 0 || i == 0))
+                    if(x_ == 1 && i == 0)
                     {
                         if (Convert.ToString(resultFour) == forFourTest)
                             Console.WriteLine("Тест пройден УДАЧНО!");
@@ -112,7 +112,6 @@ namespace OneName
                     i -= 1;
                     Console.WriteLine(fEx.Message);
                 }
-                i_ ++; // для понимания 1 - й тест проводится или же нет, потому - что он значищий
             }
         }
     }

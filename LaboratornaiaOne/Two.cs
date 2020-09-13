@@ -5,7 +5,7 @@ namespace TwoName
 {
     public class Two
     {
-        private int xAxis = 5, yAxis = 3, testMax = 10, i_=0; 
+        private int xAxis = 5, yAxis = 3, testMax = 10; 
         private bool resultCalculation, blockforFor = false;
         private uint amountTest = 11;
         public int xOne, yOne, xCout, yCout;
@@ -22,9 +22,9 @@ namespace TwoName
         public void CoutResult()
         {
             if (resultCalculation)
-                Console.WriteLine("Точка ПРИНАДЛЕЖИТ!\n");
+                Console.Write("Точка ПРИНАДЛЕЖИТ!\n");
             else
-                Console.WriteLine("Точка НЕ ПРИНАДЛЕЖИТ");
+                Console.Write("Точка НЕ ПРИНАДЛЕЖИТ");
         }
 
         public void Answer()
@@ -50,10 +50,10 @@ namespace TwoName
             {
                 try
                 {
-                    if(i_==0)
-                    Console.WriteLine("Тест № "+(i+1)+" (данный тест будет определяющим к примеру точка с координатами: х=4, y=2, будет ПРИНАДЛЕЖАТЬ области)");
+                    if(i==0)
+                    Console.WriteLine("\nТест № "+(i+1)+" (данный тест будет определяющим к примеру точка с координатами: х=4, y=2, будет ПРИНАДЛЕЖАТЬ области)");
                     else
-                        Console.WriteLine("Tecт № " + (i + 1));
+                        Console.WriteLine("\nTecт № " + (i + 1));
 
                     Menu();
                     if (!blockforFor)
@@ -62,7 +62,7 @@ namespace TwoName
                         {
                             resultCalculation = true;
                             CoutResult();
-                            if (xCout == 4 && yCout == 2 && (i_ == 0 || i == 0))
+                            if (xCout == 4 && yCout == 2 && i == 0)
                             {
                                 Console.WriteLine("Тест пройден УДАЧНО!");
                             }
@@ -72,13 +72,12 @@ namespace TwoName
                         {
                             resultCalculation = false;
                             CoutResult();
-                            if (xCout == 4 && yCout == 2 && (i_ == 0 || i == 0))
+                            if (xCout == 4 && yCout == 2 && i == 0)
                             {
                                 Console.WriteLine("Тест пройден НЕУДАЧНО!");
                             }
                         }
                     }
-                    i_++; // для понимания 1-й тест проводится или же нет, потому-что он значищий
                 }
                 catch(FormatException fEX)
                 {
