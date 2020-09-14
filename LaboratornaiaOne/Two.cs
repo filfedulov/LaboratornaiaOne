@@ -24,7 +24,7 @@ namespace TwoName
             if (resultCalculation)
                 Console.Write("Точка ПРИНАДЛЕЖИТ!\n");
             else
-                Console.Write("Точка НЕ ПРИНАДЛЕЖИТ");
+                Console.Write("Точка НЕ ПРИНАДЛЕЖИТ\n");
         }
 
         public void Answer()
