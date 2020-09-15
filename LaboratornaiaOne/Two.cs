@@ -6,7 +6,7 @@ namespace TwoName
     public class Two
     {
         private int xAxis = 5, yAxis = 3, testMax = 10; 
-        private bool resultCalculation, blockforFor = false;
+        private bool resultCalculation;
         private uint amountTest = 11;
         public int xOne, yOne, xCout, yCout;
 
@@ -16,7 +16,6 @@ namespace TwoName
             xCout = int.Parse(Console.ReadLine());
             Console.Write("Введите координаты точки по y: ");
             yCout = int.Parse(Console.ReadLine());
-            blockforFor = false;
         }
 
         public void CoutResult()
@@ -56,8 +55,6 @@ namespace TwoName
                         Console.WriteLine("\nTecт № " + (i + 1));
 
                     Menu();
-                    if (!blockforFor)
-                    {
                         if ((yCout <= xAxis - 2 && yCout >= 0) && (xCout <= yAxis + 2 && xCout >= 0))
                         {
                             resultCalculation = true;
@@ -77,11 +74,9 @@ namespace TwoName
                                 Console.WriteLine("Тест пройден НЕУДАЧНО!");
                             }
                         }
-                    }
                 }
                 catch(FormatException fEX)
                 {
-                    blockforFor = true;
                     i -= 1;
                     Console.WriteLine(fEX.Message);
                 }
