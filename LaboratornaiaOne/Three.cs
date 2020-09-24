@@ -16,7 +16,7 @@ namespace ThreeName
             forThreeTestd_ = Convert.ToString(DOUBLE_ANSWER);
             forThreeTestf_ = Convert.ToString(FLOAT_ANSWER);
             Console.WriteLine("ЗАДАЧА 3(Протестируем данные значения, они должны соответствовать при double = 1,00117176771164, при преобразовании во float = -1250000.)");
-           
+              
                 do
                 {
                 try
